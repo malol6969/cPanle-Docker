@@ -1,0 +1,41 @@
+{
+    "name": "cPanel",
+    "title": "cPanel Autoinstall",
+    "description": "Instalează automat cPanel pe un server nou creat",
+    "version": "1.0.0",
+    "author": "Bard",
+    "commands": [
+      {
+        "name": "install",
+        "description": "Instalează cPanel",
+        "command": [
+          "apt-get update",
+          "apt-get install -y wget unzip",
+          "wget https://files.cpanel.net/latest/cpanel-installer.sh",
+          "chmod 755 cpanel-installer.sh",
+          "./cpanel-installer.sh",
+        ],
+      }
+    ],
+    "options": [
+      {
+        "name": "username",
+        "type": "string",
+        "description": "Numele de utilizator al administratorului cPanel",
+        "default": "admin",
+      },
+      {
+        "name": "password",
+        "type": "password",
+        "description": "Parola administratorului cPanel",
+        "default": "admin",
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "description": "Adresa de e-mail a administratorului cPanel",
+        "default": "admin@example.com",
+      },
+    ],
+  }
+  
